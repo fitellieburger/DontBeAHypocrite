@@ -1,0 +1,163 @@
+.repCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 260px;
+  max-height: 300px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+
+  background: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+      overflow: visible;  /* allow expanding children */
+
+  /* Subtle base shadow for a clean card look */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    max-height 0.3s ease,
+    z-index 0.1s ease-in-out;
+  z-index: 1;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+@media (max-width: 768px) {
+
+
+  .repCard {
+    position: relative;
+    transform: none !important; /* Disable stacking transform */
+    width: 300px;
+    max-width: 100%;
+    z-index: auto;
+  }
+}
+
+@keyframes softLift {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+  100% {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.expanded {
+  width: 600px;  /* expanded width */
+  max-height: none; /* allow full height */
+  overflow: visible;
+  padding: 2rem;
+  /* optional: add box shadow for emphasis */
+  box-shadow: 0 0 20px 5px rgba(73, 73, 73, 0.8); /* golden glow */
+  border: 2px solid rgba(65, 65, 65, 0.9);
+  z-index: 1000;
+}
+
+
+@media (max-width: 768px) {
+
+
+  .expanded {
+    width: 300px;  /* expanded width for mobile */
+    max-height: none; /* allow full height */
+    transform: none !important; /* Disable stacking transform */
+    width: 100%;
+    max-width: 100%;
+    z-index: auto;
+  }
+}
+
+.banner {
+  width: 100%;            /* full width of card */
+  background-color: #ddd; /* grey banner */
+  padding: 0.4rem 1.25rem; /* vertical + horizontal padding (match card horizontal padding) */
+  border-radius: 6px 6px 0 0; /* rounded top corners */
+  box-sizing: border-box;
+  user-select: none;
+}
+
+
+.name {
+  
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2vw , 3rem);
+
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+
+  color: #111;
+
+  line-height: 1;
+  user-select: none;
+
+  display: block;       /* Ensure it behaves like a block element */
+  width: 100%;          /* Take full width of parent */
+  word-break: break-word; /* Wrap long words if needed */
+
+  
+}
+
+.profilePic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* circular shape */
+  object-fit: cover;  /* crop and fill container */
+  margin-bottom: 0.75rem;
+  border: 2px solid #cc0000; /* optional colored border */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: block;
+  user-select: none;
+}
+
+.role {
+  font-style: normal;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  margin-top: .2rem;
+}
+
+.level {
+  margin: 0.1rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.party {
+  margin: 0.1rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.reason {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin-top: 0.5rem;
+  color: #444;
+  transition: max-height 0.3s ease;
+}
+
+
+
+/* Show full reason when expanded */
+.expanded .reason {
+  max-height: 1000px; /* or large enough for content */
+  overflow: visible;
+}
+
+
+
+
+

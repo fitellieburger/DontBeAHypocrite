@@ -1,0 +1,89 @@
+/* ZIP form base and slide-in */
+.zipForm {
+  margin-top: 270px;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: 1rem;
+
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.slideInRightActive {
+  animation: slideInRight 0.5s ease forwards;
+}
+
+.fadeSlideUp {
+  animation: fadeSlideUp 0.5s ease forwards;
+}
+
+input {
+  padding: 0.75rem 1rem;
+  width: 80%;
+  max-width: 300px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+button {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #817c7c;
+}
+
+button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

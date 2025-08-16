@@ -1,0 +1,75 @@
+.loadingWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  margin-top: 270px; /* Adjust based on your header height */
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  z-index: 9999; /* above everything else */
+}
+
+.loadingText {
+    margin-top: 270px;
+  font-family: "League Spartan", sans-serif;
+  text-align: center;
+  line-height: 1;
+}
+
+.loadingText h3 {
+  font-size: 3rem; /* bigger text */
+  font-weight: 700;
+  letter-spacing: -0.02em; /* closer letters */
+  -webkit-text-stroke: 2px rgb(255, 255, 255); /* outline */
+  color: transparent; /* fill will be applied */
+}
+
+/* Optional: prevent line break glitches */
+.loadingHeading, .loadingSubtext {
+  overflow-wrap: break-word;
+}
+
+
+.loadingHeading span,
+.loadingSubtext span {
+  position: relative;
+  display: inline-block;
+  -webkit-text-stroke: 2px rgb(255, 255, 255); /* outline */
+  color: transparent; /* transparent fill behind */
+  transform-origin: center;
+  will-change: transform;
+}
+
+.fillText {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  color: black; /* solid fill color */
+  opacity: 0.15; /* default low opacity */
+  -webkit-text-stroke: 0; /* no outline on fill */
+  pointer-events: none; /* don't block events */
+  transform-origin: center;
+  will-change: opacity;
+}
+
+.paraFillText {
+  position: relative;
+
+  /* Tinted fill default */
+  color: rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 2px black; /* outline */
+  user-select: none;
+}
+
+.loadingText p {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.01em; /* slightly closer */
+  color: rgb(255, 255, 255); /* filled */
+  -webkit-text-stroke: 2px rgb(255, 255, 255); /* outline */
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,62 @@
+.persistentStance {
+  position: absolute;
+  top: 0;
+  
+  
+  margin-top: 2rem;
+  width: max-content; /* or a fixed width if needed */
+
+  z-index: 1; /* Make sure it sits above other content */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.clause {
+  font-size: clamp(1.5rem, 7vw,3rem);
+  font-weight: 400;
+  margin-bottom: -2rem; /* Bring closer to topic */
+  line-height: 1;       /* Optional fine control */
+}
+
+.topic {
+  font-size: clamp(3rem, 15vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+
+.swipeLeftOut {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.swipeRightIn {
+  transform: translateX(100%);
+  opacity: 0;
+  animation: slideInRight 0.3s forwards;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .persistentStance {
+    position: relative; /* so it flows naturally in mobile layouts */
+    margin-top: 1rem;
+    width: 90vw; /* almost full width on mobile */
+  }
+  
+  .clause {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    margin-bottom: -1.2rem; /* slightly less negative */
+  }
+  
+  .topic {
+    font-size: clamp(4rem, 18vw, 5rem);
+  }
+}

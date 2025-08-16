@@ -1,0 +1,43 @@
+/* Header title */
+.appHeader {
+  
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  
+  display: inline-block;
+  vertical-align: bottom;
+
+  padding: 0;
+  margin: 0;
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 15vw, 15rem);
+  line-height: .75;
+  
+  font-weight: bold;
+  color: white;
+
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 100; /* Ensure it appears above other content */
+}
+
+
+
+.appHeader:hover,
+.appHeader:focus,
+.appHeader:active {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.432);
+     outline: none;
+}
+
+/* Optionally, for mobile specifically */
+@media (max-width: 768px) {
+  .appHeader {
+    bottom: 5px; /* a bit more spacing from bottom on small screens */
+    font-size: clamp(5rem, 20vw, 20rem);
+  }
+}
