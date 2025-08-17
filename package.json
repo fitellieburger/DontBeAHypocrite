@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --repo https://github.com/fitellieburger/DontBeAHypocrite.git"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "gsap": "^3.13.0",
