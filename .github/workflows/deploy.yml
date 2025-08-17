@@ -21,15 +21,17 @@ jobs:
       # 3. Install dependencies
       - run: npm install
 
+      - name: Set Git identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       # 4. Build the Vite app
       - run: npm ci
       - run: npm run build
       - run: npx gh-pages -d dist
 
-      - name: Set Git identity
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
 
       # 5. Deploy to GitHub Pages
       - name: Deploy
