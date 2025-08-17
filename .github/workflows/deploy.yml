@@ -22,7 +22,9 @@ jobs:
       - run: npm install
 
       # 4. Build the Vite app
+      - run: npm ci
       - run: npm run build
+      - run: npx gh-pages -d dist
 
       # 5. Deploy to GitHub Pages
       - name: Deploy
