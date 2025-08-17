@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { Representative } from '../types/Representative';
 import { RepCard } from './RepCard';
 import styles from '../styles/ResultsPage.module.css';

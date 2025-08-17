@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./styles/App.css";
 import { stances } from "./data/stances";
 import type { Representative } from "./types/Representative";
@@ -17,9 +17,9 @@ function App() {
   const [themeColor, setThemeColor] = useState<"red" | "blue">("red");
 
   // Initial userflow
-  const rulesRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const bottomHalfRef = useRef<HTMLDivElement>(null);
+  const rulesRef = useRef<HTMLDivElement>(null!);
+  const titleRef = useRef<HTMLDivElement>(null!);
+  const bottomHalfRef = useRef<HTMLDivElement>(null!);
 
   useRulesTitleScrollAnimation(rulesRef, titleRef, bottomHalfRef);
 
@@ -32,7 +32,7 @@ function App() {
   const [stage, setStage] = useState<"intro" | "zipForm" | "loading" | "results">("intro");
   const [slideOut, setSlideOut] = useState(false);
   const [loadingExiting, setLoadingExiting] = useState(false);
-const [resultsEntering, setResultsEntering] = useState(false);
+  const [, setResultsEntering] = useState(false);
 
   // Zip code state
   const [zipCode, setZipCode] = useState("");
@@ -40,7 +40,7 @@ const [resultsEntering, setResultsEntering] = useState(false);
   const [zipSubmitted, setZipSubmitted] = useState(false);
 
   // Loading and data
-  const [isLoading, setIsLoading] = useState(false);
+  const [, setIsLoading] = useState(false);
   const [withYouReps, setWithYouReps] = useState<Representative[]>([]);
   const [againstYouReps, setAgainstYouReps] = useState<Representative[]>([]);
 
@@ -123,7 +123,9 @@ const [resultsEntering, setResultsEntering] = useState(false);
         setStage("results");
         
       }, 1500);
-    } catch (error) {
+    } 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    catch (error) {
       alert("Failed to load representatives. Try again.");
       setIsLoading(false);
       setZipSubmitted(false);

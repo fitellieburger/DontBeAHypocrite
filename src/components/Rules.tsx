@@ -1,5 +1,4 @@
 // components/Rules.tsx
-import React from "react";
 import styles from "../styles/Rules.module.css";
 
 export function Rules() {

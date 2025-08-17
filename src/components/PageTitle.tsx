@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '../styles/PageTitle.module.css';
 
 export function PageTitle() {

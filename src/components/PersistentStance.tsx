@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '../styles/PersistentStance.module.css';
 
 interface PersistentStanceProps {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Representative } from '../types/Representative';
 import gsap from 'gsap';
 import styles from '../styles/RepCard.module.css';
